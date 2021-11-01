@@ -3,39 +3,36 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-
 export class AppComponent {
   title = 'cards-exercise';
   defaultCards: any[] = [];
 
-  ngOnInit(): void {
-  }    
- 
-  constructor(){
-  }
+  ngOnInit(): void {}
+
+  constructor() {}
 
   sortCardNums() {
-      this.defaultCards.sort((a, b) => a.cardNum - b.cardNum);
+    this.defaultCards.sort((a, b) => a.cardNum - b.cardNum);
   }
 
   addNewCard() {
-      const card={
-        id:this.createUUID(),
-        cardNum: this.getRandomInt(),
-      }
-    this.defaultCards
+    const card = {
+      id: this.createUUID(),
+      cardNum: this.getRandomNumber(),
+    };
+    this.defaultCards;
     this.defaultCards.push(card);
-  } 
+  }
 
-  deleteCard(id:string) {
-    this.defaultCards.forEach((card,index)=>{
-      if(card.id==id) this.defaultCards.splice(index,1);
+  deleteCard(id: string) {
+    this.defaultCards.forEach((card, index) => {
+      if (card.id == id) this.defaultCards.splice(index, 1);
     });
   }
-  
-  getRandomInt() {
+
+  getRandomNumber() {
     return Math.floor(Math.random() * 10000);
   }
 

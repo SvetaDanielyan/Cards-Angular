@@ -7,10 +7,6 @@ import { InstructionCompComponent } from './instruction-comp/instruction-comp.co
 import { CardComponent } from './card/card.component';
 import { HeaderComponent } from './header/header.component';
 import { LayoutComponent } from './layout/layout.component';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreModule } from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -19,15 +15,10 @@ import { environment } from '../environments/environment';
     InstructionCompComponent,
     CardComponent,
     HeaderComponent,
-    LayoutComponent
+    LayoutComponent,
   ],
-  imports: [
-    BrowserModule,
-    EffectsModule.forRoot([]),
-    StoreModule.forRoot({}, {}),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-  ],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

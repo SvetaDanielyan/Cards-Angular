@@ -1,8 +1,14 @@
 <div class="main">
   <div class="cardsView">
-    <app-header (addcard)="addNewCard()" (sortCards)="sortCardNums()"></app-header>
+    <app-header
+      (addcard)="addNewCard()"
+      (sortCards)="sortCardNums()"
+    ></app-header>
     <div class="layout">
-      <app-layout [cards]="defaultCards" (delete)="deleteCard($event)"></app-layout>
+      <app-layout
+        [cards]="defaultCards"
+        (delete)="deleteCard($event)"
+      ></app-layout>
     </div>
     <app-footer-comp></app-footer-comp>
   </div>
