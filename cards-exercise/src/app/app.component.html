@@ -1,17 +1,10 @@
-<div class="container">
-  <div class="main">
-    <div class="cardsView">
-      <div class="header">
-        <button (click)="addNewCard()">Add Card</button>
-        <button (click)="sortRandomInts()">Sort Card</button>
-      </div>
-      <div class="cards">
-        <div class="cardItem" *ngFor="let item of defaultCards">
-          <span>{{item}}</span>
-        </div>
-      </div>
-      <app-footer-comp></app-footer-comp>
+<div class="main">
+  <div class="cardsView">
+    <app-header (addcard)="addNewCard()" (sortCards)="sortCardNums()"></app-header>
+    <div class="layout">
+      <app-layout [cards]="defaultCards" (delete)="deleteCard($event)"></app-layout>
     </div>
-    <app-instruction-comp></app-instruction-comp>
+    <app-footer-comp></app-footer-comp>
   </div>
+  <app-instruction-comp></app-instruction-comp>
 </div>

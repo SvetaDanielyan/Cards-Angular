@@ -5,28 +5,50 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'cards-exercise';
+  defaultCards: any[] = [];
 
-  defaultCards = this.generateDefaultCardIds();
+  ngOnInit(): void {
+  }    
+ 
+  constructor(){
+  }
 
+  sortCardNums() {
+      this.defaultCards.sort((a, b) => a.cardNum - b.cardNum);
+  }
+
+  addNewCard() {
+      const card={
+        id:this.createUUID(),
+        cardNum: this.getRandomInt(),
+      }
+    this.defaultCards
+    this.defaultCards.push(card);
+  } 
+
+  deleteCard(id:string) {
+    this.defaultCards.forEach((card,index)=>{
+      if(card.id==id) this.defaultCards.splice(index,1);
+    });
+  }
+  
   getRandomInt() {
     return Math.floor(Math.random() * 10000);
   }
 
-  sortRandomInts() {
-    this.defaultCards.sort((a, b) => a - b);
-  }
-
-  addNewCard() {
-    this.defaultCards.push(Math.floor(this.getRandomInt()));
-  }
-
-  generateDefaultCardIds() {
-    let res = [];
-    for (let i = 0; i < 4; i++) {
-      res.push(Math.floor(this.getRandomInt()));
-    }
-    return res;
+  createUUID() {
+    var dt = new Date().getTime();
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
+      /[xy]/g,
+      function (c) {
+        var r = (dt + Math.random() * 16) % 16 | 0;
+        dt = Math.floor(dt / 16);
+        return (c == 'x' ? r : (r & 0x3) | 0x8).toString(16);
+      }
+    );
+    return uuid;
   }
 }

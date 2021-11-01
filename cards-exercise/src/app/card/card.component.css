@@ -1,0 +1,20 @@
+
+.card{
+    background-color: rgb(255, 140, 0);
+    height: 150px;
+    width: 220px;
+    margin: 10px;
+    border-radius: 7px;
+    align-items: center;
+}
+
+.cardNumber{
+  margin-top: 40px;
+  font-size: large;
+}
+
+.deleteButton{
+    background-color: transparent;
+    border: 0;
+    margin-left: 150px;
+}
