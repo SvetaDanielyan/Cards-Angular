@@ -2,7 +2,7 @@
   <div class="cardsView">
     <app-header
       (addcard)="addNewCard()"
-      (sortCards)="sortCardNums()"
+      (sortCards)="sortNumber()"
     ></app-header>
     <div class="layout">
       <app-layout [cards]="cards" (delete)="deleteCard($event)"></app-layout>

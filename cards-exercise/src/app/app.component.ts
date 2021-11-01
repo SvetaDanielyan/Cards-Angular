@@ -15,16 +15,15 @@ export class AppComponent {
 
   constructor(private helper: Helper) {}
 
-  sortCardNums() {
-    this.cards.sort((a, b) => a.cardNum - b.cardNum);
+  sortNumber() {
+    this.cards.sort((a, b) => a.number - b.number);
   }
 
   addNewCard() {
     const card = {
       id: this.helper.createUUID(),
-      cardNum: this.getRandomNumber(),
+      number: this.getRandomNumber(),
     };
-    this.cards;
     this.cards.push(card);
   }
 

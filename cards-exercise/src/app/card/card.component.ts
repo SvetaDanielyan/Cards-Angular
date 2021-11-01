@@ -6,11 +6,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
-  @Input() cardNum: any;
+  @Input() number: any;
   @Output() delete = new EventEmitter();
 
   ngOnInit(): void {
-    console.log(this.cardNum);
   }
 
   deleteCardFunc() {

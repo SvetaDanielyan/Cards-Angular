@@ -1,7 +1,7 @@
 <div class="cards">
   <div *ngFor="let card of cards">
     <app-card
-      [cardNum]="card.cardNum"
+      [number]="card.number"
       (delete)="deleteCardFunc(card.id)"
     ></app-card>
   </div>
