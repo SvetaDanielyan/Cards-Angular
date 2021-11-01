@@ -5,10 +5,7 @@
       (sortCards)="sortCardNums()"
     ></app-header>
     <div class="layout">
-      <app-layout
-        [cards]="defaultCards"
-        (delete)="deleteCard($event)"
-      ></app-layout>
+      <app-layout [cards]="cards" (delete)="deleteCard($event)"></app-layout>
     </div>
     <app-footer-comp></app-footer-comp>
   </div>

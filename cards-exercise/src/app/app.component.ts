@@ -1,51 +1,40 @@
 import { Component } from '@angular/core';
+import { Helper } from './helper';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  providers: [Helper],
 })
 export class AppComponent {
   title = 'cards-exercise';
-  defaultCards: any[] = [];
+  cards: any[] = [];
 
   ngOnInit(): void {}
 
-  constructor() {}
+  constructor(private helper: Helper) {}
 
   sortCardNums() {
-    this.defaultCards.sort((a, b) => a.cardNum - b.cardNum);
+    this.cards.sort((a, b) => a.cardNum - b.cardNum);
   }
 
   addNewCard() {
     const card = {
-      id: this.createUUID(),
+      id: this.helper.createUUID(),
       cardNum: this.getRandomNumber(),
     };
-    this.defaultCards;
-    this.defaultCards.push(card);
+    this.cards;
+    this.cards.push(card);
   }
 
   deleteCard(id: string) {
-    this.defaultCards.forEach((card, index) => {
-      if (card.id == id) this.defaultCards.splice(index, 1);
+    this.cards.forEach((card, index) => {
+      if (card.id == id) this.cards.splice(index, 1);
     });
   }
 
   getRandomNumber() {
     return Math.floor(Math.random() * 10000);
-  }
-
-  createUUID() {
-    var dt = new Date().getTime();
-    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
-      /[xy]/g,
-      function (c) {
-        var r = (dt + Math.random() * 16) % 16 | 0;
-        dt = Math.floor(dt / 16);
-        return (c == 'x' ? r : (r & 0x3) | 0x8).toString(16);
-      }
-    );
-    return uuid;
   }
 }
