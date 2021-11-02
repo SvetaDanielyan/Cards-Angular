@@ -9,8 +9,7 @@ export class CardComponent implements OnInit {
   @Input() number: any;
   @Output() delete = new EventEmitter();
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   deleteCardFunc() {
     this.delete.emit();
