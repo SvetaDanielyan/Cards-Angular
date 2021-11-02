@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-instruction-comp',
   templateUrl: './instruction-comp.component.html',
-  styleUrls: ['./instruction-comp.component.css']
+  styleUrls: ['./instruction-comp.component.css'],
 })
-export class InstructionCompComponent implements OnInit {
+export class InstructionComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

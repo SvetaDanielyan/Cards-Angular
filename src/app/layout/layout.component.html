@@ -1,0 +1,8 @@
+<div class="cards">
+  <div *ngFor="let card of cards">
+    <app-card
+      [number]="card.number"
+      (delete)="deleteCardFunc(card.id)"
+    ></app-card>
+  </div>
+</div>

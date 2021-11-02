@@ -1,0 +1,13 @@
+<div class="main">
+  <div class="cardsView">
+    <app-header
+      (addcard)="addNewCard()"
+      (sortCards)="sortNumber()"
+    ></app-header>
+    <div class="layout">
+      <app-layout [cards]="cards" (delete)="deleteCard($event)"></app-layout>
+    </div>
+    <app-footer-comp></app-footer-comp>
+  </div>
+  <app-instruction-comp></app-instruction-comp>
+</div>
