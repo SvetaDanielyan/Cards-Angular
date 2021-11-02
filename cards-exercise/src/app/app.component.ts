@@ -28,9 +28,7 @@ export class AppComponent {
   }
 
   deleteCard(id: string) {
-    this.cards.forEach((card, index) => {
-      if (card.id == id) this.cards.splice(index, 1);
-    });
+    this.cards = this.cards.filter((card) => card.id != id);
   }
 
   getRandomNumber() {

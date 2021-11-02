@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './footer-comp.component.html',
   styleUrls: ['./footer-comp.component.css'],
 })
-export class FooterCompComponent implements OnInit {
+export class FooterComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
